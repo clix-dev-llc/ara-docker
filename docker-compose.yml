@@ -1,0 +1,10 @@
+version: "3"
+services:
+  ara:
+    build: .
+    image: "pberthaux/ara:0.1"
+    container_name: "ara"
+    ports:
+      - "9191:9191"
+    volumes:
+      - ./ansible:/tmp/ansible

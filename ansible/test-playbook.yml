@@ -1,0 +1,15 @@
+---
+- hosts: all
+  connection: local
+  order: inventory
+  gather_facts: False
+  serial: 1
+  tasks:
+    - debug:
+       msg: "start {{ inventory_hostname }}"
+
+    - wait_for:
+       timeout: 1
+
+    - debug:
+       msg: "stop {{ inventory_hostname }}"
